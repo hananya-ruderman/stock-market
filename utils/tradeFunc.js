@@ -14,11 +14,11 @@ export function filterStocksByPrice(givenPrice, above) {
     })
 }
 
-export function OperateOnStock(operation, identifier) {
+export function operateOnStock(operation, identifier) {
     if (operation === "buy" || operation === "sell") {
         const company = searchStock(identifier)
         if (company.length) {
-            console.log(`company detayls ${company[0]}`)
+            
             let amount = +input(`how many stocks do you want to ${operation}?: `)
             if (operation === "buy" && company[0].availableStocks >= amount) {
                 company[0].availableStocks -= amount
@@ -33,7 +33,6 @@ export function OperateOnStock(operation, identifier) {
                 updateCompanyPrice(company[0], operation)
                 console.log(`company price updated to ${company[0].currentPrice} in 5%`)
                 updateCategoryPrice(company[0].category, operation)
-                console.log(company[0].category)
                 console.log(`all companies in category ${company[0].category} updated in 1%`)
                 return true
         }
