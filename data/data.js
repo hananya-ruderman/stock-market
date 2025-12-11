@@ -1,4 +1,4 @@
-const stockMarket = {
+export default {
     lastUpdated: "2025-12-08T12:00:00Z",
     stocks: [
         {
